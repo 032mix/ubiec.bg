@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Убиец</title>
+
+    <script src="phaser.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .chat {
+            position: absolute;
+            z-index: 1000;
+            color: blue;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid white;
+            padding: 3px;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .login {
+            margin: 200px auto;
+            width: 300px;
+            border: 1px solid black;
+            padding: 3px;
+        }
+
+        #error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login">
+    <label for="username">Name:</label>
+    <input type="text" id="username">
+    <button id="startGame" onclick="startGame()">Start</button>
+    <div id="error"></div>
+</div>
+
+<div class="chat" hidden>
+    <div id="chat-text" style="width: 500px; height: 100px;overflow-y: scroll"></div>
+    <input id="chat-input" type="text" style="width: 480px">
+</div>
+
+<script src="client.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
